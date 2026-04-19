@@ -37,6 +37,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/contactus", contactusRoutes);
 
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
 // This must be last, after all other routes
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
