@@ -33,7 +33,7 @@ const __dirname = path.resolve();
 app.use(express.json());
 
 // Health check endpoint
-app.get("/", (req, res) => {
+app.get("/api/healthcheckup", (req, res) => {
     res.json({ message: "Server is running" });
 });
 
