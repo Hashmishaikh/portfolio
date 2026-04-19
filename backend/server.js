@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
+import path from "path";
 import cors from "cors";
 import contactusRoutes from "./routes/contactus.routes.js";
 
@@ -27,6 +28,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 5000;
+const __dirname = path.resolve();
 
 app.use(express.json());
 
