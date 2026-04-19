@@ -37,6 +37,11 @@ app.get("/", (req, res) => {
 
 app.use("/api/contactus", contactusRoutes);
 
+// This must be last, after all other routes
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
